@@ -1,0 +1,36 @@
+{% layout 'layout/main.liquid' %}
+
+{% block context %}
+    <h1>heeloss liquid {{ name }}</h1>
+    <!-- asssing adalah nama variable -->
+    {% assign name = "aldodevv" %}
+
+    <!-- Concate / Placeholder -->
+    <p>
+      {{ contex.app_name }}
+    </p>
+
+    <!-- Length of data -->
+    {{ data.length }}
+
+    <!-- Mapping Data -->
+    {% for e in data %}
+    <span>
+      <!-- length in data -->
+      {{ forloop.length }}
+      <p>{{ forloop.index }}. {{ e.username }}</p>
+    </span>
+    {% endfor %}
+
+    <br />
+    <!-- Mengganti : ke spasi -->
+    {%assign contoh = "test:satu"%} {{ contoh | replace: ":", " " }}
+
+    {%liquid 
+        assign test = "aldoevv" 
+        assign testot = "evalia"
+    %}
+
+    {% assign my_num = 25 %}
+    <p style="color:red">{{my_num}}</p>
+{% endblock %}

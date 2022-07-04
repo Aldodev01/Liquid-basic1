@@ -1,0 +1,33 @@
+{% layout 'layout/main.liquid' %}
+
+{% assign myString = "String" %}
+{% assign myNumber = 25 %}
+{% assign myBool = true %}
+{% assign myNil = nil %}
+
+
+
+{% block context %}
+<span>Type Data</span>
+<br/>
+<p>String : {{myString}}</p>
+<p>Number : {{myNumber}}</p>
+{% if myBool %}
+  <p>Bool : True</p>
+{% elsif myBool == false%}
+  <p>Bool : Not True</p>
+{% else %}
+ <p>Bool : hi</p>
+{% endif %}
+
+{% for e in data %}
+  {{ e.username }}
+{% endfor %}
+
+<p>{% if myNil == nil %}
+    <p>Null : Kosong</p>
+  {% else %}
+   <p>Null : Anjay</p>
+  {% endif %}</p>
+
+{% endblock %}
